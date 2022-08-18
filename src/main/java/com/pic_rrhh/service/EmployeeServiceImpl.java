@@ -26,23 +26,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return userRepository.findByDepartment(department);
 	}
 
-	
-	/*@Override
-	public DAOUser save(DAOUser newUser) {
-		if (newUser != null) {
-			DAOUser user = new DAOUser();
-			newUser.setIdUser(newUser.getIdUser());
-			newUser.setIdentificator(newUser.getIdentificator());
-			newUser.setPassword(bcryptEncoder.encode(newUser.getPassword()));
-			newUser.setName(newUser.getName());
-			newUser.setSurname(newUser.getSurname());
-			newUser.setPhone(newUser.getPhone());
-			newUser.setObservations(newUser.getObservations());
-			newUser.setMail(newUser.getMail());
-			return userRepository.save(newUser);
-		}
-		return newUser;
-	}*/
+
 
 	@Override
 	public String deleteUserById(int id) {
@@ -54,22 +38,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return "Error! El usuario no existe";
 	}
 
-	/*@Override
-	public void updateUser(DAOUser newUser, int id) {
-	
-			Optional<DAOUser> user = userRepository.findById(id);
-			
-			DAOUser userEntity = user.get();
-
-			userEntity.setMail(newUser.getMail());
-			userEntity.setName(newUser.getName());
-			userEntity.setIdentificator(newUser.getIdentificator());
-			userEntity.setPassword(newUser.getPassword());
-			userEntity.setSurname(newUser.getSurname());
-			
-			userRepository.save(userEntity);
-		
-	}*/
 
 
 	@Override
