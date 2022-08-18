@@ -31,24 +31,4 @@ public class EmployeeController {
 			return employeeService.findByDepartment(department);
 		}
 			
-		/*@PostMapping("/adduser")
-		public DAOUser addUsuarios(@RequestBody DAOUser user) {
-			return  userService.saveUser(user);
-		}*/
-		
-		/*
-		@PostMapping("/users/deleteuser/{id}")
-		public String deleteUsuario(@PathVariable int id) {
-			return usuarioService.deleteUsuarios(id);
-		}
-		
-		@PutMapping("/users/update/{id}")
-		public ResponseEntity<Object> updateUsuario(@RequestBody DAOUsuarios usuarioNuevo, @PathVariable int id) {
-			
-			usuarioService.updateUsuarios(usuarioNuevo, id);
-			return ResponseEntity.ok(Boolean.TRUE);
-			
-		}*/
-		
-
 }

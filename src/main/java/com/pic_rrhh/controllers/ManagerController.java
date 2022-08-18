@@ -22,41 +22,17 @@ public class ManagerController {
 	 @Autowired
 	 private ManagerService managerService;
 	 
+		@PreAuthorize("hasRole('Responsable RRHH')")
 		@GetMapping("/find")
 		public List<DAOManager> getManagers() {
 			return managerService.findAllManagers();
-	  	}
-			
-		@GetMapping("/findId/{id}")
-		public Optional<DAOManager> getManagersById(@PathVariable int id){
-			return managerService.findById(id);
-		}
+	  	}			
 		
-		@GetMapping("/findName/{name}")
-		public List<DAOManager> getManagersByName(@PathVariable String username){
-			return managerService.findByUsername(username);
-		}
-		
-		@PostMapping("/add")
 		@PreAuthorize("hasRole('Responsable RRHH')")
+		@PostMapping("/add")
 		public DAOManager addManagers(@RequestBody DAOManager manager) {
 			return  managerService.save(manager);
 		}
-		
-		
-		/*
-		@PostMapping("/users/deleteuser/{id}")
-		public String deleteUsuario(@PathVariable int id) {
-			return usuarioService.deleteUsuarios(id);
-		}
-		
-		@PutMapping("/users/update/{id}")
-		public ResponseEntity<Object> updateUsuario(@RequestBody DAOUsuarios usuarioNuevo, @PathVariable int id) {
-			
-			usuarioService.updateUsuarios(usuarioNuevo, id);
-			return ResponseEntity.ok(Boolean.TRUE);
-			
-		}*/
 		
 
 }

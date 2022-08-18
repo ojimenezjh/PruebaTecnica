@@ -1,15 +1,11 @@
 package com.pic_rrhh.controllers;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pic_rrhh.config.JwtTokenUtil;
-import com.pic_rrhh.dao.DAOManager;
 import com.pic_rrhh.models.JwtRequest;
 import com.pic_rrhh.models.JwtResponse;
 import com.pic_rrhh.service.JwtService;
@@ -37,7 +32,7 @@ public class JwtController {
 	@Autowired
 	private JwtService jwtService;
 	
-	@RequestMapping(value = "/authenticate", method = RequestMethod.POST)
+	@PostMapping("/authenticate")
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
 		
 		authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
