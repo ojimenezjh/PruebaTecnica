@@ -43,22 +43,6 @@ public class ManagerServiceImpl implements ManagerService {
 		return newManager;
 	}
 
-	/*@Override
-	public void updateManager(DAOManager newManager, int id) {
-	
-			Optional<DAOManager> user = managerRepository.findById(id);
-			
-			DAOManager userEntity = user.get();
-
-			userEntity.setMail(newManager.getMail());
-			userEntity.setName(newManager.getName());
-			userEntity.setIdentificator(newManager.getIdentificator());
-			userEntity.setPassword(newManager.getPassword());
-			userEntity.setSurname(newManager.getSurname());
-			
-			managerRepository.save(userEntity);
-		
-	}*/
 	
 	@Override
 	public String deleteManagerById(int id) {
